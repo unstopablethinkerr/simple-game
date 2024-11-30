@@ -16,15 +16,49 @@ h1 {
     margin-bottom: 20px;
 }
 
-canvas {
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
     border: 2px solid #000;
-    background-color: #fff;
-    max-width: 100%;
-    max-height: 100%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+#scoreBoard {
+    margin-top: 20px;
+}
+
+#scoreBoard p {
+    margin: 5px 0;
 }
 
 @media (max-width: 600px) {
     h1 {
         font-size: 1.5em;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
     }
 }
